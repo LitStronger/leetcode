@@ -32,9 +32,4 @@ var searchInsert = function (nums, target) {
 };
 
 let arr = [1, 2, 4, 6]
-// console.log(searchInsert(arr, 3))
-const test = {
-    a: 1
-}
-test.a = 2
-console.log(test)
+console.log(searchInsert(arr, 3))
