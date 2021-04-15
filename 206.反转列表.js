@@ -16,7 +16,6 @@ var reverseList = function (head) {
         let temp = nodeB.next;
         nodeB.next = nodeA;
 
-
         nodeA = nodeB
         nodeB = temp;
     }
