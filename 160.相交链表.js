@@ -14,12 +14,14 @@ function ListNode(val) {
  * @param {ListNode} headB
  * @return {ListNode}
  */
-var getIntersectionNode = function(headA, headB) {
-    let p1 = headA;
-    let p2 = headB;
-    while(p1 !== p2){
-        p1 = (p1 === null) ? headB: p1.next;
-        p2 = (p2 === null) ? headA: p2.next;
-    }
-    return p1;
+var getIntersectionNode = function (headA, headB) {
+  let p1 = headA;
+  let p2 = headB;
+  while (p1 !== p2) {
+    p1 = p1 === null ? headB : p1.next;
+    p2 = p2 === null ? headA : p2.next;
+  }
+  return p1;
 };
+
+// 思路2：是否可以反转链表后再进行遍历
