@@ -1,0 +1,13 @@
+<script>
+    // JSONP是通过script标签加载数据, 把返回值里的数据作为函数的参数，然后执行函数
+    // 1. 提前在页面声明一个函数，函数名(showData)以传参的方式传给后端
+    // 2. 后台解析函数名后在原始数据上「包裹」这个函数名，返回给前端。
+    // 3. 换句话说，JSONP 需要对应接口的后端的配合才能实现。
+    function showData(data) {
+        console.log(data)
+    }
+</script>
+
+<script src=`${url}?callback=showData`></script>
+
+<!-- 封装 -->

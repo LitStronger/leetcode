@@ -3,19 +3,17 @@
 // 3.交换根节点的左节点和右节点。
 
 function TreeNode(val, left, right) {
-    this.val = (val === undefined ? 0 : val)
-    this.left = (left === undefined ? null : left)
-    this.right = (right === undefined ? null : right)
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
 }
 
-function reserveTree(tree) {
-    if (!tree) return
-    let root = tree;
-    reserveTree(root.left)
-    reserveTree(root.right)
-    let temp = new TreeNode()
-    temp = root.left
-    root.left = root.right
-    root.right = temp
-    return root
-}
+var invertTree = function (root) {
+  if (!root) return root;
+  let tempNode = root.left;
+  root.left = root.right;
+  root.right = tempNode;
+  invertTree(root.left);
+  invertTree(root.right);
+  return root;
+};

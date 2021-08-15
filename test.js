@@ -1,16 +1,35 @@
-var maxSubArray = function (nums) {
-    if (nums.length == 0) return nums[0]
-    let maxSum = nums[0];
-    let tempArr = []
-    tempArr[0] = nums[0]
-    for (let i = 1; i < nums.length; i++) {
-        tempArr[i] = Math.max(tempArr[i - 1] + nums[i], nums[i])
-    }
-    for (let i = 1; i < tempArr.length; i++) {
-        maxSum = Math.max(tempArr[i], maxSum)
-    }
-    console.log(maxSum)
-    return maxSum
-};
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-maxSubArray(nums)
+// let s = "bB";
+// s = String(s).replace(/ /g, "");
+// if (!s) console.log("");
+
+// let res = s[0];
+// for (let i = 1; i < s.length; i++) {
+//   if (s[i] !== s[i - 1]) {
+//     res += s[i];
+//   }
+// }
+// console.log(res);
+
+// let n = 5;
+// let A = ["1", "6", "3", "3", "8"];
+// for (let i = 0; i < n; i++) {
+//   A[i] = parseInt(A[i]);
+// }
+// // console.log(A);
+// let dp = [0];
+// for (let i = 1; i < n; i++) {
+//   dp[i] = 0;
+//   for (let j = 0; j < i; j++) {
+//     if (A[j] < A[i]) dp[i] = Math.max(dp[i], A[j]);
+//   }
+// }
+// // console.log(dp);
+// let res = 0;
+// for (let i = 1; i <= n; i++) {
+//   res += dp[i - 1] * i;
+// }
+// console.log(res);
+
+let n = 6, k = 3
+let arr =[1, 6, 5, 2, 2, 5]
+let x = 0

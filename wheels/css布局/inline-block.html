@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三栏inline-block布局</title>
+    <style type="text/css">
+        .main-container {}
+
+        .part-left {
+            background-color: lightgreen;
+            display: inline-block;
+            width: 150px;
+            height: 15rem;
+        }
+
+        .part-right {
+            background-color: aqua;
+            width: calc(100% - 150px - 1em);
+            /*行内元素存在默认行间距*/
+            height: 15rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="part-left"></div>
+        <div class="part-right"></div>
+    </div>
+</body>
+
+</html>

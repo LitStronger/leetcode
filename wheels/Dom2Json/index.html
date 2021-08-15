@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <span>
+        <a href=""></a>
+      </span>
+      <span>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+    </div>
+    <script>
+      function Dom2Json(dom) {
+        if (!dom) return;
+        // 区别根节点和childNodes
+        let isList = dom.length;
+        let jsonObj = isList ? [] : {};
+        if (isList) {
+          for (let i = 0; i < dom.length; i++) {
+            let item = {};
+            item.tag = dom[i].tagName;
+            item.children = dom[i].children.length
+              ? Dom2Json(dom[i].children)
+              : [];
+            jsonObj.push(item);
+          }
+        } else {
+          jsonObj.tag = dom.tagName;
+          jsonObj.children = dom.children.length ? Dom2Json(dom.children) : [];
+        }
+        return jsonObj;
+      }
+      let dom = document.querySelector("#app");
+      console.log(Dom2Json(dom));
+    </script>
+  </body>
+</html>
